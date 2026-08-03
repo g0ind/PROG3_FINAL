@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "b1b110ex-press-4890-a1b2-c3d4e5f67890",
+		"name": "BiblioExpress API",
+		"description": "Colección de Postman con los 4 endpoints obligatorios de BiblioExpress.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /api/prestamos/prestar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"codigoMaterial\": \"LIB-001\",\n  \"idSocio\": 101\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/prestamos/prestar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prestamos",
+						"prestar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/prestamos/devolver",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"codigoMaterial\": \"LIB-001\",\n  \"idSocio\": 102,\n  \"diasAtraso\": 3,\n  \"tipoEstrategia\": \"CAMPANIA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/prestamos/devolver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prestamos",
+						"devolver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/materiales/disponibles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/materiales/disponibles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"materiales",
+						"disponibles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/socios/depurar-duplicados",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  \"40123456\",\n  \"38987654\",\n  \"40123456\",\n  \"42111222\",\n  \"38987654\"\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/depurar-duplicados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"depurar-duplicados"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
